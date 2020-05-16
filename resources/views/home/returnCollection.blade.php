@@ -57,7 +57,7 @@
 	 $hashparams = $request["HASHPARAMS"];
     	 $hashparamsval = $request["HASHPARAMSVAL"];
 	 $hashparam = $request["HASH"];
-         $storekey="DumluPinar@20";
+         $storekey="";
          $paramsval="";
          $index1=0;
 	 $index2=0;
@@ -71,7 +71,7 @@
  		$paramsval = $paramsval . $vl; 
 		$index1 = $index2 + 1;
 	}
-	$storekey = "DumluPinar@20";
+	$storekey = "";
 	$hashval = $paramsval.$storekey;
 
 
