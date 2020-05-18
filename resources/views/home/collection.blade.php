@@ -99,7 +99,7 @@
                     <input type="hidden" name="til"  :value="fIl"  >
                     <input type="hidden" name="tilce"  :value="fIlce" >
                     <input type="hidden" name="tpostakodu" value="">
-                    <input type="hidden" name="tulkekod" :value="tr">
+                    <input type="hidden" name="tulkekod" value="tr">
 
                     <input type="hidden" name="itemnumber1"  value="{{$education->education_name}}">
                     <input type="hidden" name="productcode1" value="{{$education->education_name}}">
@@ -111,13 +111,13 @@
                 <div class="form-row">
                     <div class="col-md-8 mb-3">
                     <label for="validationServer013">Ad Soyad</label>
-                    <input type="text" class="form-control is-valid" :value="fIsmi" id="validationServer013" placeholder="Ad Soyad"
+                    <input type="text" class="form-control is-valid" v-model="fIsmi" id="validationServer013" placeholder="Ad Soyad"
                         required>
                     
                     </div>   
                     <div class="col-md-4 mb-3">
                         <label for="validationServer053">Telefon Numaranız</label>
-                        <input type="text" :value="fTel" class="form-control is-valid"  placeholder="Telefon Numaranız"
+                        <input type="text" v-model="fTel" class="form-control is-valid"  placeholder="Telefon Numaranız"
                             required>
                     
                     </div>
@@ -125,19 +125,19 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                     <label for="validationServer033">Adres</label>
-                    <input type="text" class="form-control is-valid" :value="fAdres" id="validationServer033" placeholder="Adresiniz"
+                    <input type="text" class="form-control is-valid" v-model="fAdres" id="validationServer033" placeholder="Adresiniz"
                         required>
                 
                     </div>
                     <div class="col-md-3 mb-3">
                     <label for="validationServer043">İl</label>
-                    <input type="text" :value="fIl" class="form-control is-valid"  placeholder="İl"
+                    <input type="text" v-model="fIl" class="form-control is-valid"  placeholder="İl"
                         required>
 
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="validationServer053">İlçe</label>
-                        <input type="text" :value="fIlce" class="form-control is-valid"  placeholder="İlçe"
+                        <input type="text" v-model="fIlce" class="form-control is-valid"  placeholder="İlçe"
                             required>
                     
                     </div>
