@@ -30,7 +30,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.css"/>
-    <title>{{$education->education_name}}</title>
+    <title>{{$SiteAyarlar[0]->SiteAdi}} - {{$education->education_name}}</title>
 
   </head>
   <body>
@@ -39,7 +39,7 @@
         <!-- Image and text -->
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" >
-            <img src="https://lsmdpusem.dpu.edu.tr/plugins/images/dpusem.png"  style="width:2%"alt=""> DPÜSEM 
+            <img src="https://lsmdpusem.dpu.edu.tr/plugins/images/dpusem.png"  style="width:2%"alt=""> {{$SiteAyarlar[0]->SiteAdi}}
             </a>
         </nav>
         <nav aria-label="breadcrumb">
@@ -77,7 +77,7 @@
                     <input type="hidden" name="lang" value="tr">
                     <input type="hidden" name="price1" value="{{ $odeme['amount']}}">
                     <input type="hidden" name="total1" value="{{ $odeme['amount']}}">
-                    <input type="hidden" name="firmaadi" value="Dumlupınar Üniversitesi">
+                    <input type="hidden" name="firmaadi" value="{{$SiteAyarlar[0]->SiteAdi}}">
 
 
                     <input type="hidden" name="Fismi" :value="fIsmi" >
