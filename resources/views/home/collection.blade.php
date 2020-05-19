@@ -39,7 +39,7 @@
         <!-- Image and text -->
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" >
-            <img src="https://lsmdpusem.dpu.edu.tr/plugins/images/dpusem.png"  style="width:2%"alt=""> {{$SiteAyarlar[0]->SiteAdi}}
+            <img src="{{ URL::asset($SiteAyarlar[0]->SiteFavicon)}}"  style="width:2%"alt=""> {{$SiteAyarlar[0]->SiteAdi}}
             </a>
         </nav>
         <nav aria-label="breadcrumb">
