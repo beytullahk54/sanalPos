@@ -154,7 +154,7 @@
                 </form>
             </div>
         </div>
-        <div id="altfooter"><img src="{{URL::Asset('panelFile/site/payments.png')}}" style="width=100%" alt=""></div>
+        <div id="altfooter"><img src="{{URL::Asset('panelFile/site/payments.png')}}" style="width:100%" alt=""></div>
 
         
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
