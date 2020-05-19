@@ -39,7 +39,7 @@
         <!-- Image and text -->
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" >
-            <img src="{{ URL::asset($SiteAyarlar[0]->SiteFavicon)}}"  style="width:70%"alt=""> {{$SiteAyarlar[0]->SiteAdi}}
+            <img src="{{ URL::asset($SiteAyarlar[0]->SiteFavicon)}}"  style="width:10%"alt=""> {{$SiteAyarlar[0]->SiteAdi}}
             </a>
         </nav>
         <nav aria-label="breadcrumb">
@@ -154,7 +154,7 @@
                 </form>
             </div>
         </div>
-        <div id="altfooter"><img src="{{URL::Asset('panelFile/site/payments.png')}}" style="width:100%" alt=""></div>
+        <div id="altfooter"><img src="{{URL::Asset('panelFile/site/payments.png')}}" style="width:100%;    padding: 0% 10% 0% 10%;" alt=""></div>
 
         
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
