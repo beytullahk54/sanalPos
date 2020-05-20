@@ -10,7 +10,9 @@ use App\ders;
 use App\education;
 use App\site_ayarlar;
 use Illuminate\Support\Facades\URL;
-use Session;
+use Session;      
+use Illuminate\Http\RedirectResponse;
+
 
 
 class HomeController extends Controller
@@ -74,7 +76,13 @@ class HomeController extends Controller
         $response = $request->Response;
 		if($response == "Approved")
 		{
-			return redirect()->route('home')->with('status','Ödeme işleminiz başarıyla tamamlanmıştır.');
+            if(empty(site_ayarlar::where('site_key','yonlendirmeUrl')->first()->value))
+            {
+			    return new RedirectResponse(site_ayarlar::where('site_key','yonlendirmeUrl')->first()->value); 
+            }else
+            {
+                return redirect()->route('home')->with('status','Ödeme işleminiz başarıyla tamamlanmıştır.');
+            }
 		}
 		else
 		{
