@@ -55,7 +55,7 @@ class AdminController extends Controller
    			
 		public function edit($id)
 		{
-			return view('admin.educations.edit')->with('education',education::where('id','=',$id)->get());
+			return view('admin.educations.edit')->with('education',education::where('id','=',$id)->first());
 
 		}
 		public function update($id)
