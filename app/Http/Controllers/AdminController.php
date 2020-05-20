@@ -53,9 +53,32 @@ class AdminController extends Controller
 
 		}
    			
-		public function edit()
+		public function edit($id)
 		{
-			return view('admin.educations.edit');
+			return view('admin.educations.edit')->with('education',education::where('id','=',$id)->get());
+
+		}
+		public function update($id)
+		{
+		
+			$educationSave = education::where('id','=',$id)->first();
+			$educationSave->education_name = $request->education_name;
+			$educationSave->education_price = $request->education_price;
+			$educationSave->education_url = $request->education_url;
+			
+			if($educationSave->save())
+			{
+				return redirect()->route('admin.panel');
+			}
+			
+		}
+   			
+		public function delete($id)
+		{
+			if(education::where('id','=',$id)->delete())
+			{
+				return redirect()->back()->with('status','Eğitim silme işlemi başarılı');
+			}
 		}
       
     

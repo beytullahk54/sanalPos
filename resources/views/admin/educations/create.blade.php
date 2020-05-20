@@ -12,6 +12,14 @@ Eğitimler
 
 @section('icerik')
 <div class="col-md-12">
+
+    <h1>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+    </h1>
     <div class="card">
         <form action="{{URL::Asset('/panel/education/createPost')}}" method="post" >
             {{ csrf_field() }}

@@ -34,6 +34,7 @@ Eğitimler
                             <th>Eğitimin Adı</th>
                             <th>Eğitimin Ücreti</th>
                             <th>Eğitimin Url'si</th>
+                            <th>Ayarlar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,6 +45,18 @@ Eğitimler
                                 <td>{{$education->education_name}}</td>
                                 <td>{{$education->education_price}}</td>
                                 <td>{{URL::asset('odeme/'.$education->education_url)}}</td>
+                                <td>
+
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Ayarlar
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                          <a class="dropdown-item" href="{{URL::Asset('panel/education/edit/'.$education->id)}}">Güncelle</a>
+                                          <a class="dropdown-item" href="{{URL::Asset('panel/education/delete/'.$education->id)}}">Sil</a>
+                                        </div>
+                                      </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

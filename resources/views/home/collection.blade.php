@@ -118,7 +118,7 @@
                     </div>   
                     <div class="col-md-3 mb-3">
                         <label for="validationServer013">Tc Kimlik</label>
-                        <input type="text" class="form-control is-valid" v-model="tcKimlik" id="validationServer013" placeholder="Ad Soyad"
+                        <input type="text" class="form-control is-valid" v-model="tcKimlik" id="validationServer013" placeholder="Tc Kimlik Numarası"
                             required>
                         
                     </div>   
