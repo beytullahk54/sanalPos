@@ -21,7 +21,7 @@ Eğitim Güncelleme
         @endif
     </h1>
     <div class="card">
-        <form action="{{URL::Asset('/panel/education/update'.$education->id)}}" method="post" >
+        <form action="{{URL::Asset('/panel/education/update/'.$education->id)}}" method="post" >
             {{ csrf_field() }}
             <div class="card-header">
                 <div class="row">
