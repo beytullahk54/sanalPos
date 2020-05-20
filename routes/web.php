@@ -14,7 +14,7 @@
 use App\Http\Middleware\Profil;
 Auth::routes();
 
-Route::get('/',  array('uses'=>'HomeController@index'));
+Route::get('/',  array('as'=>'home','uses'=>'HomeController@index'));
 
 Route::get('/panel',  array('as'=>'admin.panel','uses'=>'AdminController@index'));
 

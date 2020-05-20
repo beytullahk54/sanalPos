@@ -74,11 +74,11 @@ class HomeController extends Controller
         $response = $request->Response;
 		if($response == "Approved")
 		{
-			return redirect()->back()->with('status','Ödeme işleminiz başarıyla tamamlanmıştır.');
+			return redirect()->route('home')->with('status','Ödeme işleminiz başarıyla tamamlanmıştır.');
 		}
 		else
 		{
-			return redirect()->back()->with('status','Ödeme işleminiz başarısız olmuştur.'.$ErrMsg);
+			return redirect()->route('home')->with('status','Ödeme işleminiz başarısız olmuştur.'.$ErrMsg);
 		}
     }
 	public function Yardim_Al()
