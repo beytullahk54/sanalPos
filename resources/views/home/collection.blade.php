@@ -57,6 +57,7 @@
                 @endif
             </h1>
             <div class="container" >
+                <span style="color:red">Lütfen bu alana eğitimi alacak katılımcı bilgisini giriniz.</span>
                 <form method="post" action="https://sanalpos2.ziraatbank.com.tr/fim/est3Dgate">
                     <input type="hidden" name="clientid" value="{{ $odeme['clientId']}}">
                     <input type="hidden" name="amount" value="{{ $odeme['amount']}}">
@@ -80,7 +81,7 @@
                     <input type="hidden" name="firmaadi" value="{{$SiteAyarlar[0]->SiteAdi}}">
 
 
-                    <input type="hidden" name="Fismi" :value="fIsmi" >
+                    <input type="hidden" name="Fismi" :value="fIsmi+' - '+tcKimlik" >
                     <input type="hidden" name="faturaFirma" value="">
                     <input type="hidden" name="Fadres" :value="fAdres">
                     <input type="hidden" name="Fadres2" value="">
@@ -92,7 +93,7 @@
                     <input type="hidden" name="fulkekod" value="tr">
 
                     <input type="hidden" name="nakliyeFirma" value="na fi">
-                    <input type="hidden" name="tismi" :value="fIsmi"  >
+                    <input type="hidden" name="tismi" :value="fIsmi+' - '+tcKimlik"  >
                     <input type="hidden" name="tadres" :value="fAdres" >
                     <input type="hidden" name="tadres2" value="test 2">
 
@@ -109,11 +110,17 @@
 
 
                 <div class="form-row">
-                    <div class="col-md-8 mb-3">
-                    <label for="validationServer013">Ad Soyad</label>
-                    <input type="text" class="form-control is-valid" v-model="fIsmi" id="validationServer013" placeholder="Ad Soyad"
-                        required>
-                    
+                    <div class="col-md-5 mb-3">
+                        <label for="validationServer013">Ad Soyad</label>
+                        <input type="text" class="form-control is-valid" v-model="fIsmi" id="validationServer013" placeholder="Ad Soyad"
+                            required>
+                        
+                    </div>   
+                    <div class="col-md-3 mb-3">
+                        <label for="validationServer013">Tc Kimlik</label>
+                        <input type="text" class="form-control is-valid" v-model="tcKimlik" id="validationServer013" placeholder="Ad Soyad"
+                            required>
+                        
                     </div>   
                     <div class="col-md-4 mb-3">
                         <label for="validationServer053">Telefon Numaranız</label>
@@ -169,7 +176,8 @@
                     fIlce: '',
                     fAdres:'',
                     fPostaKodu:'',
-                    fTel:''
+                    fTel:'',
+                    tcKimlik:''
                 }
             })
 
