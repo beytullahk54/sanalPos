@@ -76,7 +76,7 @@ class HomeController extends Controller
         $response = $request->Response;
 		if($response == "Approved")
 		{
-            if(empty(site_ayarlar::where('site_key','yonlendirmeUrl')->first()->value))
+            if(!empty(site_ayarlar::where('site_key','yonlendirmeUrl')->first()->value))
             {
 			    return new RedirectResponse(site_ayarlar::where('site_key','yonlendirmeUrl')->first()->value); 
             }else
