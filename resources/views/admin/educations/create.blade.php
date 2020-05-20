@@ -30,19 +30,19 @@ Eğitimler
             <div class="card-body table-border-style">
                 <div class="col-md-12 mb-3">
                     <label for="validationTooltip01">Eğitim Adı</label>
-                    <input type="text" class="form-control" name="education_name" id="validationTooltip01" placeholder="Eğitimin Adı" value="" required="">
+                    <input type="text" class="form-control "required name="education_name" id="validationTooltip01" placeholder="Eğitimin Adı" value="" required="">
                 
                 </div>
                 <div class="col-md-12 mb-3">
                     <label for="validationTooltip01">Eğitim Fiyatı</label>
-                    <input type="text" class="form-control" name="education_price" id="validationTooltip01" placeholder="Eğitimin Fiyatı" value="" required="">
+                    <input type="number" class="form-control"required name="education_price" id="validationTooltip01" placeholder="Eğitimin Fiyatı" value="" required="">
                 
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text"  id="basic-addon3">{{URL::Asset('odeme/')}}</span>
                     </div>
-                    <input type="text" class="form-control" name="education_url" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" class="form-control" name="education_url"required id="basic-url" aria-describedby="basic-addon3">
                 </div>
             </div>
         </form>
