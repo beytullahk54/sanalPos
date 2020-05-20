@@ -58,7 +58,7 @@ class AdminController extends Controller
 			return view('admin.educations.edit')->with('education',education::where('id','=',$id)->first());
 
 		}
-		public function update($id)
+		public function update(Request $request,$id)
 		{
 		
 			$educationSave = education::where('id','=',$id)->first();
