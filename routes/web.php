@@ -21,7 +21,7 @@ Route::get('/panel',  array('as'=>'admin.panel','uses'=>'AdminController@index')
 Route::get('/panel/education/create',  array('as'=>'admin.education.create','uses'=>'AdminController@create'));
 Route::post('/panel/education/createPost',  array('as'=>'admin.education.createPost','uses'=>'AdminController@createPost'));
 Route::get('/panel/education/edit/{id?}',  array('as'=>'admin.education.edit','uses'=>'AdminController@edit'));
-Route::get('/panel/education/update/{id?}',  array('as'=>'admin.education.update','uses'=>'AdminController@update'));
+Route::post('/panel/education/update/{id?}',  array('as'=>'admin.education.update','uses'=>'AdminController@update'));
 Route::get('/panel/education/delete/{id?}',  array('as'=>'admin.education.delete','uses'=>'AdminController@delete'));
 
 
