@@ -81,7 +81,7 @@
                     <input type="hidden" name="firmaadi" value="{{$SiteAyarlar[0]->SiteAdi}}">
 
 
-                    <input type="hidden" name="Fismi" :value="fIsmi+' - '+tcKimlik" >
+                    <input type="hidden" name="Fismi" :value="fIsmi+' - ' + tcKimlik + ' - {{$education->education_name}}'" >
                     <input type="hidden" name="faturaFirma" value="">
                     <input type="hidden" name="Fadres" :value="fAdres">
                     <input type="hidden" name="Fadres2" value="">
