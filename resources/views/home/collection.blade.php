@@ -92,7 +92,7 @@
                     <input type="hidden" name="tel" :value="fTel" value="">
                     <input type="hidden" name="fulkekod" value="tr">
 
-                    <input type="hidden" name="nakliyeFirma" value="na fi">
+                    <input type="hidden" name="nakliyeFirma" value="-">
                     <input type="hidden" name="tismi" :value="fIsmi+' - '+tcKimlik"  >
                     <input type="hidden" name="tadres" :value="fAdres" >
                     <input type="hidden" name="tadres2" value="test 2">
@@ -104,9 +104,9 @@
 
                     <input type="hidden" name="itemnumber1"  value="{{$education->education_name}}">
                     <input type="hidden" name="productcode1" value="{{$education->education_name}}">
-                    <input type="hidden" name="qty1" value="3">
-                    <input type="hidden" name="desc1" value="a4 desc">
-                    <input type="hidden" name="id1" value="a5">
+                    <input type="hidden" name="qty1" value="1">
+                    <input type="hidden" name="desc1" value={{$education->education_name}}>
+                    <input type="hidden" name="id1" value={{$education->education_name}}>
 
 
                 <div class="form-row">
@@ -117,7 +117,7 @@
                         
                     </div>   
                     <div class="col-md-3 mb-3">
-                        <label for="validationServer013">Tc Kimlik</label>
+                        <label for="validationServer013">Tc Kimlik / Pasaport No</label>
                         <input type="text" class="form-control is-valid" v-model="tcKimlik" id="validationServer013" placeholder="Tc Kimlik Numarası"
                             required>
                         
@@ -157,13 +157,43 @@
                     </div>
                 
                 </div>
+                @if (\App\site_ayarlar::where('site_key','=','mesafe-sozlesme')->first()->value)
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input is-valid" required id="invalidCheck22" required>
+                        <label class="custom-control-label" for="invalidCheck22"> Mesafeli Satış Sözleşmesini Okudum</label> <br>
+                        </div>
+                        <a href="#" data-toggle="modal" data-target="#exampleModal"><small>Mesafeli Satış Sözleşmesi</small></a>
+                    </div>
+                    <div class="modal fade modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Mesafeli Satış Sözleşmesi</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              {!!\App\site_ayarlar::where('site_key','=','mesafe-sozlesme')->first()->value!!}
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                @endif
+            
                 <button class="btn btn-primary" type="submit">Ödemeye Geç</button>
                 </form>
             </div>
         </div>
         <div id="altfooter"><img src="{{URL::Asset('panelFile/site/payments.png')}}" style="width:100%;    padding: 0% 10% 0% 10%;" alt=""></div>
 
-        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script>
 
