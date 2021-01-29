@@ -1,0 +1,5 @@
+.env
+/public/uploads
+/public/panelFile
+/storage
+.DS_Store
