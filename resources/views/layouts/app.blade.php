@@ -55,11 +55,11 @@
 					<li class="nav-item">
 					    <a href="{{URL::Asset('/panel')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Eğitimler</span></a>
 					</li>
-				
-				
-				
-					
-
+					<!-- iyzico eklemesi -->
+					<li class="nav-item">
+					    <a href="{{URL::Asset('/iyzico-panel')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">iyzico</span></a>
+					</li>
+					<!-- iyzico eklemesi -->
 				</ul>
 				
 			

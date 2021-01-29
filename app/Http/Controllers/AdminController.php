@@ -10,6 +10,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
+use App\educationiyzico;
+use App\iyziusers;
 use Alert;
 use Validator;
 use Carbon\Carbon;
@@ -26,12 +28,47 @@ class AdminController extends Controller
 		{
 			return view('admin.educations.index')->with('educations',education::all());
 		}
-   			
+
+		//iyzico
+		public function iyzico()
+		{
+			return view('admin.educations.iyzico')->with('educations',educationiyzico::all());
+		}
+		//iyzico
+
 		public function create()
 		{
 			return view('admin.educations.create');
 		}
-   			
+
+		//iyzico
+		public function createIyzico()
+		{
+			return view('admin.educations.createiyzico');
+		}
+
+		public function createPostiyzico(Request $request )
+		{
+			if(educationiyzico::where('education_url','=',$request->education_url)->count()==0)
+			{
+				$educationSave = new educationiyzico();
+				$educationSave->education_name = $request->education_name;
+				$educationSave->education_price = $request->education_price;
+				$educationSave->education_url = $request->education_url;
+				$educationSave->iyzi_link = $request->iyzilink;
+				if($educationSave->save())
+				{
+					return redirect()->route('admin.iyzipanel');
+				}
+			}else
+			{
+				return redirect()->back();
+			}
+
+
+		}
+		//iyzico
+
 		public function createPost(Request $request )
 		{
 			if(education::where('education_url','=',$request->education_url)->count()==0)

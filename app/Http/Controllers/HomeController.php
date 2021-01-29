@@ -8,7 +8,9 @@ use App\ogrenci_ders;
 use App\User;
 use App\ders;
 use App\education;
+use App\educationiyzico;
 use App\site_ayarlar;
+use App\iyziusers;
 use Illuminate\Support\Facades\URL;
 use Session;      
 use Illuminate\Http\RedirectResponse;
@@ -69,7 +71,35 @@ class HomeController extends Controller
 
 	    return view('home.collection')->with('education',$education)->with('odeme',$odeme)->with('status','başarılı');
     }
- 
+    public function iyziOdeme(Request $request)
+		{
+			//return $request->all();
+			$veri = educationiyzico::where('id','=',$request->id)->first();
+			if(iyziusers::where('tc','=',$request->tcKimlik)->where('education_id','=',$request->id)->where('telefon','=',$request->fTel)->count() > 0)
+			{
+				return view('home.dahaOnceOlanOdeme')->with('education',$veri)->with('dahaOnceKayitVar','merhaba');
+			}
+			//return $veri->iyzi_link;
+			$add = new iyziusers();
+			$add->name=$request->fIsmi;
+			$add->tc=$request->tcKimlik;
+			$add->telefon=$request->fTel;
+			$add->adres=$request->Adres;
+			$add->il=$request->il;
+			$add->ilce=$request->ilce;
+			$add->education_id=$request->id;
+			$add->save();
+			if($add)
+			{
+				return redirect()->to($veri->iyzi_link);
+			}
+		}
+    public function iyzico($url)
+    {
+        
+        $education = educationiyzico::where('education_url',$url)->first();
+	    return view('home.iyzicollection')->with('education',$education);
+    }
  
     public function odemeSonuc(Request $request)
     {
