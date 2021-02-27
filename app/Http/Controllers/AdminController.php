@@ -56,6 +56,8 @@ class AdminController extends Controller
 				$educationSave->education_price = $request->education_price;
 				$educationSave->education_url = $request->education_url;
 				$educationSave->iyzi_link = $request->iyzilink;
+				$educationSave->resim = $request->glink;
+				$educationSave->metin = $request->metin;
 				if($educationSave->save())
 				{
 					return redirect()->route('admin.iyzipanel');

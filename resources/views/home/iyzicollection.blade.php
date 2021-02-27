@@ -70,7 +70,7 @@
                     </div>   
                     <div class="col-md-3 mb-3">
                         <label for="validationServer013">Tc Kimlik</label>
-                        <input type="text" class="form-control is-valid" v-model="tcKimlik" name="tcKimlik" id="validationServer013" placeholder="Tc Kimlik Numarası"
+                        <input type="text" class="form-control is-valid" v-model="tcKimlik" name="tcKimlik" maxlength="11" minlength="11" id="validationServer013" placeholder="Tc Kimlik Numarası"
                             required>
                         
                     </div>   
@@ -113,7 +113,43 @@
                 </form>
             </div>
         </div>
-        <div id="altfooter"><img src="{{URL::Asset('panelFile/site/payments.png')}}?v3" style="width:100%;    padding: 0% 10% 0% 10%;" alt=""></div>
+        <div class="col-md-12" style='margin-top:5px;'>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="container text-center">
+                        @if ($education->resim)
+                        <div class="col-md-12">
+                           <img src="{{$education->resim}}"  class="img-fluid" alt="banner">
+                        </div>
+                        @endif
+                   </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="container">
+                        @if($education->metin)
+                        <div class="col-md-12">
+                           {!!$education->metin!!}
+                        </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+          <!--  <div class="container text-center">
+                 @if ($education->resim)
+                 <div class="col-md-12">
+                    <img src="{{$education->resim}}" style='max-width:50%;height=auto;' class="img-fluid" alt="banner">
+                 </div>
+                 @endif
+            </div>
+            <div class="container">
+                @if($education->metin)
+                <div class="col-md-12">
+                   {!!$education->metin!!}
+                </div>
+                @endif
+            </div> -->
+        </div>
+       <!-- <div id="altfooter"><img src="{{URL::Asset('panelFile/site/payments.png')}}?v3" style="width:100%;    padding: 0% 10% 0% 10%;" alt=""></div> -->
 
         
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

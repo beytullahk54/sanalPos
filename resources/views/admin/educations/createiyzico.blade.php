@@ -56,6 +56,14 @@ Eğitimler
                     <span class="input-group-text"  id="basic-addon3">İyzico Link</span>
                     <input type="text" class="form-control" name="iyzilink" required id="basic-url" aria-describedby="basic-addon3">
                 </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"  id="basic-addon3">Görsel Linki</span>
+                    <input type="text" class="form-control" name="glink" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"  id="basic-addon3">Metin</span>
+                    <input type="text" class="form-control" name="metin" id="basic-url" aria-describedby="basic-addon3">
+                </div>
             </div>
         </form>
     </div>
